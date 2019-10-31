@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+    p {
+        border: 1px solid powderblue;
+  margin: 50px;
+  background: #fff;
+  width: 400px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 25px;
+  margin: 8% auto 0;
+  position: relative;
+  z-index: 1;
+  border-top: 5px solid #f5ba1a;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  -webkit-transition: none;
+        transition: none;
+  -webkit-animation: expand 0.8s 0.6s ease-out forwards;
+
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #FF4500;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #FF4500;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #FF4500;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    h2 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+
+input[type=submit] {
+    width: 100%;
+    background-color: #FF4500;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+    h2{color: #FF4500;
+    text-align: center}
+
+input[type=submit]:hover {
+    background-color:  #FF6347;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+    @-webkit-keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 7px;
+  }
+  50% {
+    height: 20px;
+    width: 7px;
+  }
+}
+@keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 7px;
+  }
+  50% {
+    height: 20px;
+    width: 7px;
+  }
+}
+@-webkit-keyframes expand {
+  0% {
+    -webkit-transform: scale3d(1, 0, 1);
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: scale3d(1, 1.2, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1, 0.85, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+@keyframes expand {
+  0% {
+    -webkit-transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 0, 1);
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: scale3d(1, 1.2, 1);
+    transform: scale3d(1, 1.2, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1, 0.85, 1);
+    transform: scale3d(1, 0.85, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1, 1.05, 1);
+    transform: scale3d(1, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translate3d(0, -25px, 0);
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: translate3d(0, 10px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -6px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 2px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: translate3d(0, -25px, 0);
+    transform: translate3d(0, -25px, 0);
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -6px, 0);
+    transform: translate3d(0, -6px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 2px, 0);
+    transform: translate3d(0, 2px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .form_wrapper .col_half {
+    width: 100%;
+    float: none;
+  }}
+</style>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <title>LOCO-FORMS-Donors</title>
+<body>
+    <h2>Donors Registration Form</h2>
+
+
+
+<div class="container">
+  <form action=""  method="POST">
+      <div>
+      <label for="frstname"><em>Name:</em></label>
+      <input type="text" name="fn" value="{{request.form.fn}}" >
+
+      <label for="frstname"><em>Username:</em></label>
+      <input type="text" name="username" value="{{request.form.username}}" >
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+               <p>{{ messages[0] }}</p>
+         {% endif %}
+      {% endwith %}
+      <label for="frstname"><em>Password:</em></label>
+      <input type="password" name="password" value="{{request.form.password}}" >
+
+      <label for="age"><em>Age(must be above 18):</em></label><br>
+      <input type="number" name="fage" min="18" max="70" value="{{request.form.fage }}"><br>
+
+      <label for="Ph_no"><em>Phone number:</em></label><br>
+      <input type="number" size="15" name="fphone" value="{{request.form.fphone }}"><br>
+
+      <label for="weight"><em>Weight(kg)(should be more than 55kg):</em></label><br>
+      <input type="number" name="fw" min="55" value="{{request.form.fw }}"><br>
+
+      <label for="height"><em>Height(cm)(should be more than 155cm):</em></label><br>
+      <input type="number" name="fh" min="155" value="{{request.form.fh }}"><br>
+
+      <label for="address"><em>Address:</em></label>
+      <input type="text" name="faddress" value="{{request.form.faddress }}"><br>
+
+      <label for="occupation"><em>Occupation:</em></label>
+      <input type="text" name="focc" value="{{request.form.focc }}"><br>
+
+      <label for="info"><em>Information about minor illness/allergies, etc:</em></label>
+      <input type="text" name="finfo" value="{{request.form.finfo }}"><br>
+
+      <label for="b_blood"><em>Blood Group:</em></label><br>
+      <select name="fbg" value="{{request.form.fbg }}">
+        <option value="O+ve">O+ve</option>
+        <option value="O-ve">O-ve</option>
+        <option value="A+ve">A+ve</option>
+        <option value="A-ve">A-ve</option>
+        <option value="B+ve">B+ve</option>
+        <option value="B-ve">B-ve</option>
+        <option value="AB+ve">AB+ve</option>
+        <option value="AB-ve">AB-ve</option>
+      </select>
+
+      <label for="gender"><em>Gender:</em></label><br>
+      <select name="fgen" value="{{request.form.fgen}}">
+        <option value="M">MALE</option>
+        <option value="F">FEMALE</option>
+        <option value="O">OTHERS</option>
+      </select>
+
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</body>
+</html>
