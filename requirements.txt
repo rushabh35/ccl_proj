@@ -1,5 +1,5 @@
 flask==2.2.3
 flask_bootstrap==3.3.7.1
-matplotlib==3.7.1
+matplotlib==3.5.3
 werkzeug==2.2.3
 pymongo==4.3.3
