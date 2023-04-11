@@ -9,7 +9,7 @@ from flask import Flask,render_template,url_for,request,redirect,flash,session
 from flask_bootstrap import Bootstrap
 import matplotlib.pyplot as plt
 import os
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 import urllib
 from mongoconnect import Database
 
@@ -176,6 +176,8 @@ def donorform():
 	return render_template('donorform.html')
 
 if __name__ == '__main__':
-	app.debug = True
-	app.secret_key='12345'
-	app.run()
+	from waitress import serve
+	serve(app, host="0.0.0.0", port = 8080)
+	# app.debug = True
+	# app.secret_key='12345'
+	# app.run()

@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 class Database:
 
-    def __init__(self,ip='localhost',db=None):
+    def __init__(self,ip='mongodb+srv://rushabh05:rushabh05@traversy.xm65l.mongodb.net/?retryWrites=true&w=majority',db=None):
         try:
             conn = MongoClient(ip)
             self.db = conn.loco_donor
